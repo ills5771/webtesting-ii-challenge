@@ -12,8 +12,4 @@ describe("<Display />", () => {
     getByText(/balls:/i);
     getByText(/strikes:/i);
   });
-
-  // it('renders Balls div', () => {
-  //     const {getByText} = render()
-  // })
 });

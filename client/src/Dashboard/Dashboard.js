@@ -12,14 +12,15 @@ export default class Dashboard extends Component {
     console.log(ev);
     this.setState({
       ...this.state,
-      strike: this.state.strike + 1
+      strike:
+        this.state.strike < 2 ? this.state.strike + 1 : this.state.strike === 0
     });
   };
   ballAction = ev => {
     console.log(ev);
     this.setState({
       ...this.state,
-      ball: this.state.ball + 1
+      ball: this.state.ball < 3 ? this.state.ball + 1 : this.state.ball === 0
     });
   };
   foulAction = ev => {

@@ -15,9 +15,9 @@ describe("<App />", () => {
     render(<App />);
   });
 
-  it("renders Welcome", () => {
+  it("renders Go Dodgers!", () => {
     const { getByText } = render(<App />);
 
-    getByText(/welcome/i);
+    getByText(/go dodgers!/i);
   });
 });

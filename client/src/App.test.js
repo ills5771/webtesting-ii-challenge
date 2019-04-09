@@ -14,4 +14,10 @@ describe("<App />", () => {
   it("renders App", () => {
     render(<App />);
   });
+
+  it("renders Welcome", () => {
+    const { getByText } = render(<App />);
+
+    getByText(/welcome/i);
+  });
 });

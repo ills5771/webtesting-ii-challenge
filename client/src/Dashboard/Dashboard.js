@@ -13,21 +13,31 @@ export default class Dashboard extends Component {
     this.setState({
       ...this.state,
       strike:
-        this.state.strike < 2 ? this.state.strike + 1 : this.state.strike === 0
+        this.state.strike < 2
+          ? this.state.strike + 1
+          : (this.state.strike = 0)
+          ? this.state.strike === 3
+          : (this.state.ball = 0)
     });
   };
   ballAction = ev => {
     console.log(ev);
     this.setState({
       ...this.state,
-      ball: this.state.ball < 3 ? this.state.ball + 1 : this.state.ball === 0
+      ball:
+        this.state.ball < 3
+          ? this.state.ball + 1
+          : (this.state.ball = 0)
+          ? this.state.ball === 4
+          : (this.state.strike = 0)
     });
   };
   foulAction = ev => {
     console.log(ev);
     this.setState({
       ...this.state,
-      strike: this.state.strike + 1
+      strike:
+        this.state.strike < 2 ? this.state.strike + 1 : (this.state.strike = 2)
     });
   };
   hitAction = ev => {
